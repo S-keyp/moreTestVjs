@@ -1,13 +1,20 @@
 export class Grid {
-    gridWidth = 150
-    patate = 0
+    numberCellsX = 100
+    numberCellsY = 100
+    actualGeneration: boolean[][] = [];
 
-    constructor( patate : number ) {
-        this.patate = patate
+    
+    constructor() {
+        for(let i = 0; i < this.numberCellsX; i++){
+            const row: boolean[] = []
+            for(let j = 0; j < this.numberCellsY; j++){
+                row.push(false)
+            }
+            this.actualGeneration.push(row)
+        }      
     }
 
-    displayGrid(): String{
-
-        return this.gridWidth + ' ' + this.patate
+    displayInfo(){
+        console.log(`Grid grid: ${this.actualGeneration}`)
     }
 }
