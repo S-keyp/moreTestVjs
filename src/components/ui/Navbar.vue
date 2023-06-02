@@ -118,6 +118,10 @@
         list-style: none;
     }
 
+    .cr-navbar-menu-mobile{
+        cursor: pointer;
+    }
+
     .cr-navbar .cr-navbar-menu{
         padding: 0;
     }
@@ -182,6 +186,10 @@
     }
        
     @media print, screen and (min-width: 720px) {
+        .cr-navbar{
+            height: 40px;
+        }
+
         .cr-navbar-menu{
             gap: 10%;
             min-width: 320px;

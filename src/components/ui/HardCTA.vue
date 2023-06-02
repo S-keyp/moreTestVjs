@@ -19,5 +19,6 @@
         border: 1px solid #F9FAFD;
         border-radius: 60px;
         padding: 12px 24px;
+        color: var(--white);
     }
 </style>
