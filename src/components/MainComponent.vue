@@ -1,6 +1,6 @@
 <script setup lang='ts'>
-    import { computed, ref } from 'vue'
-    import { GameOfLife } from '../classes/GameOfLife';
+    import { computed, onMounted, ref } from 'vue'
+    import { GameOfLife } from '../classes/GameOfLife'
 
     const choosenWidth = ref(50)
     const choosenHeight = ref(50)
@@ -8,11 +8,16 @@
     const slotSizes = computed(()=>{
         return { width: choosenWidth.value, height: choosenHeight.value}
     })
+
+    onMounted(()=>{
+        const GOL = new GameOfLife(slotSizes)
+
+    })
         
+
 
     // console.log(slotSizes)
 
-    const GOL = new GameOfLife(slotSizes)
     // let gameGrid = new Grid()
 
     // function update(){

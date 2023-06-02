@@ -12,7 +12,7 @@ export class GameOfLife {
         this.frameCanvas = new FrameCanvas(this.grid, slotSizes)
 
         // this.grid.displayInfo()
-        // this.frameCanvas.displayInfo()
+        this.frameCanvas.displayInfo()
         // this.displayInfo()
 
     }

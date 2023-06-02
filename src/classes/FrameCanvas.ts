@@ -6,11 +6,13 @@ export class FrameCanvas{
     // récupère la valeur de la grid et la peint 
     grid: Grid
     slotSizes: ComputedRef
+    canvas: HTMLCanvasElement
 
 
     constructor(grid: Grid, slotSizes: ComputedRef){
         this.grid = grid;
         this.slotSizes = slotSizes
+        // this.canvas = document.querySelector('canvas')
         // canvas = document.createElement("canvas");
         // document.querySelector('.gameZone')?.append()
     }
