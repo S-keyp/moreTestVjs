@@ -106,7 +106,7 @@
         width: 70%;
         max-width: 700px;
         margin: auto;
-        padding: 12px 24px;
+        padding: 6px 24px;
         border-radius: 40px;
         border: 1px solid var(--white); 
         background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
