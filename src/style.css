@@ -4,10 +4,11 @@
   font-weight: 400;
 
   --white: #F9FAFD;
+  --dark-blue: #1E4057;
 
-  color-scheme: light dark;
+  color-scheme: light;/* dark */
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #F9FAFD;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

@@ -2,6 +2,8 @@
     import HardCTA from './HardCTA.vue'
     import DropDown from './DropDown.vue';
 
+
+    //Todo: change ismobile for smth else
     export default{
     data() {
         return {
@@ -11,7 +13,7 @@
     },
     methods: {
         detectIsMobile() {
-            this.isMobile = window.innerWidth >= 720 ? false : true;
+            this.isMobile = document.querySelector('.cr-navbar')?.getBoundingClientRect().width >= 450 ? false : true;
         }
     },
     mounted() {
@@ -63,7 +65,7 @@
             <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M42 21C42 9.40415 32.5972 0 21 0C9.40275 0 0 9.40275 0 21C0 32.5972 9.40275 42 21 42C32.5972 42 42 32.5958 42 21ZM16.4521 30.786C15.4729 29.8068 15.4729 28.2227 16.4521 27.2437L20.0228 24.129L2.06815 24.2517C2.06815 24.2517 0.0213752 23.3387 0.0734997 21.0143C0.125624 18.69 2.06815 18.197 2.06815 18.197L20.0228 17.8997L16.4521 14.785C15.4729 13.8059 15.4729 12.2217 16.4521 11.2427C17.4417 10.2689 19.0417 10.2635 20.0312 11.2427L28.1109 19.2465C29.0901 20.2203 29.0901 21.8098 28.1109 22.7878L20.0312 30.786C19.0416 31.7651 17.4416 31.7651 16.4521 30.786Z" fill="white"/></svg>
         </a>
     </div>
-    <div v-if="isMobile" @click.self="isMenuHidden = !isMenuHidden" class="cr-menu-overlay" :class="{hidden: isMenuHidden}">
+    <div v-if="isMobile" @click.self="isMenuHidden = !isMenuHidden" class="cr-menu-overlay" :class="{hidden: isMenuHidden}" style="top: -24px; left: -13px">
         <img src="../../assets/logo-sereema-full-white.cc3a36da9fad.svg" alt="Logo Sereema">
         
         <ul class="cr-navbar-menu">
@@ -89,9 +91,7 @@
                 </a>
             </li>
             <li class="cr-navbar-menu-item">
-                <HardCTA href="/demo">
-                    Request Demo
-                </HardCTA>
+                <HardCTA href="/demo" cta="Request Demo" />
             </li>
         </ul>
     </div>
@@ -103,8 +103,9 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 70%;
+        width: 70vw;
         max-width: 700px;
+        max-height: 40px;
         margin: auto;
         padding: 6px 24px;
         border-radius: 40px;
@@ -186,10 +187,6 @@
     }
        
     @media print, screen and (min-width: 720px) {
-        .cr-navbar{
-            height: 40px;
-        }
-
         .cr-navbar-menu{
             gap: 10%;
             min-width: 320px;

@@ -2,13 +2,14 @@
     export default{
         props: {
             href: String,
+            cta: String
         },
     }
 </script>
 
 <template>
     <a :href="href">
-        <slot></slot>
+        {{ cta?.toUpperCase() }}
     </a>
 </template>
 
