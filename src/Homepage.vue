@@ -1,7 +1,7 @@
 <script lang="ts">
 	import HardCTA from './components/ui/HardCTA.vue'
 	import LightCTA from './components/ui/LightCTA.vue'
-	import Navbar from './components/ui/TheNavbar.vue'
+	import Navbar from './components/ui/TheNavbarRework.vue'
 	import Sponsors from './components/corporate/Sponsors.vue'
 	import VideoCTA from './components/ui/VideoCTA.vue'
 	
@@ -169,7 +169,7 @@
 							</svg>
 							<div class="item-content">
 								<h5>Data Acquisition
-									<svg  style="display: inline-block;width: 20px; padding-left: 90px;" width="65" height="39" viewBox="0 0 65 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<svg  class="scroll-indication" width="65" height="39" viewBox="0 0 65 39" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M0 0L32.5 19.5L65 0V19.5L32.5 39L0 19.5V0Z" fill="#444444"/>
 									</svg>
 
@@ -284,7 +284,6 @@
 
 <style>
 	@import url('https://fonts.cdnfonts.com/css/alegreya-sans');
-	@import url('https://fonts.cdnfonts.com/css/almarai');
 	@import url('https://fonts.cdnfonts.com/css/allerta');
 </style>
 
@@ -309,7 +308,7 @@
 	.bg-img-1{
 		width: 2000px;
 		height: 2000px;
-		top: calc(50% - 1370px);/** - 1000px for widest screen */
+		top: calc(50% - 1368px);/** - 1000px for widest screen */
 		left: calc(50% - 1000px);
 	}
 	.bg-img-2{
@@ -332,12 +331,6 @@
 		display: flex;
 		flex-direction: column;
 	}
-	/* .hero-header h2, 
-	.hero-header h3{
-		color: transparent;
-		-webkit-text-stroke: 1px var(--white); 
-		font-size: 26px;
-	} */
 
 	.hero-header h2{
 		font-weight: 800;
@@ -351,8 +344,6 @@
 		line-height: 33px;
 	}
 	h3 strong{
-		/* color: transparent;
-		-webkit-text-stroke: 1px rgb(230, 109, 44); */
 		color:rgb(230, 109, 44);
 	}
 
@@ -473,8 +464,13 @@
 
 	.scroll-list-item {
 		display: flex;
+		justify-content: center;
 		position: relative;
 		gap: 12px;
+	}
+	
+	.scroll-list-item > *{
+		width: 90%;
 	}
 	
 	.scroll-list-item:last-child {
@@ -495,9 +491,33 @@
 	}
 
 	.item-content h5{
+		position: relative;
 		font-family: 'Almarai';
 		font-size: 20px;
 		margin: 24px 0 0;
+	}
+
+	.item-content svg.scroll-indication{
+		position: absolute;
+		display: inline-block;
+		width: 20px; 
+		top: 50%;
+		right: 0;
+		transform: translateY(-50%);
+		animation: up-and-down 1s linear infinite;
+	}
+
+	@keyframes up-and-down {
+		0%{
+			transform: translateY(-50%);
+		}
+		33%{
+			transform: translateY(-70%);
+		}
+		66%{
+			transform: translateY(-30%);
+		}
+
 	}
 	
 	.item-content ul {
@@ -553,5 +573,33 @@
 		font-size: 1.2em;
 	}
 
+
+
+
+
+@media print, screen and (min-width: 720px){
+	.hero-header h2{
+		color: transparent;
+		-webkit-text-stroke: 1px var(--white); 
+		font-size: 60px;
+		line-height: 64px;
+	}
+	
+	.hero-header h3{
+		color: transparent;
+		-webkit-text-stroke: 1px var(--white); 
+		font-size: 45px;
+    	line-height: 51px;
+	}
+
+	h3 strong{
+		color: transparent;
+		-webkit-text-stroke: 2px rgb(230, 109, 44);
+	}
+
+	.bg-img-2{
+		top: calc(50% - 707px)
+	}
+}
 </style>
 
